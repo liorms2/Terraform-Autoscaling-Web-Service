@@ -2,8 +2,8 @@
 resource "aws_autoscaling_group" "asg" {
   vpc_zone_identifier  = [aws_subnet.private_subnet_1.id, aws_subnet.private_subnet_2.id, aws_subnet.private_subnet_3.id]
   name                 = "apache-asg"
-  max_size             = 3
-  min_size             = 2
+  max_size             = 5
+  min_size             = 3
   health_check_type    = "ELB"
   termination_policies = ["OldestInstance"]
   launch_template {
